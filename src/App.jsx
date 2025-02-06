@@ -9,6 +9,7 @@ export default function App() {
   const [precioVenta, setPrecioVenta] = useState("");
   const [editId, setEditId] = useState(null);
 
+
   useEffect(() => {
     fetch(`${API_BASE}/obtener-pasteles`)
       .then((res) => res.json())
@@ -61,7 +62,7 @@ export default function App() {
       <ul>
         {pasteles.map((pastel) => (
           <li key={pastel.id}>
-            {pastel.nombre} - Compra: ${pastel.PrecioCompra} - Venta: ${pastel.PrecioVenta}
+            {pastel.nombre} - Compra: ${pastel.precioCompra} - Venta: ${pastel.precioVenta}
             <button onClick={() => handleEditar(pastel)}>Editar</button>
             <button onClick={() => handleEliminar(pastel.id)}>Eliminar</button>
           </li>
